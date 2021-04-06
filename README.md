@@ -37,6 +37,8 @@ $ py simulator.py
 
 ## Making your own Driver
 
+### Structure of a Driver
+
 Let's take a look at the most basic Driver, which is in the file [starting_point.py](./src/starting_point.py)
 
 ```python
@@ -53,6 +55,39 @@ A Driver is just a class that has a ```process_lidar``` function that takes in L
 ```ranges```: an array of 1080 distances (ranges) detected by the LiDAR scanner. As the LiDAR scanner is 360&deg;, the angle between each range is 2&pi;/1080 (in radians).
 
 ```steering_angle```: an angle in the range [-&pi;, &pi;], i.e. full 360&deg; in radians.
+
+### Choosing a Driver
+
+Let's look at the [simulator.py](./src/simulator.py) file. The section shown below is all we need to worry about.
+
+```python
+...
+# import your drivers here
+from follow_the_gap import GapFollower
+
+# choose your driver here
+driver = GapFollower()
+...
+```
+
+As shown in the comments above, we can import Drivers and then choose which one we want to use. Let's import our SimpleDriver and choose it
+
+```python
+...
+# import your drivers here
+from follow_the_gap import GapFollower
+from starting_point import SimpleDriver
+
+# choose your driver here
+driver = SimpleDriver()
+...
+```
+
+Now if you run the simulator.py file again, it now uses our SimpleDriver
+
+```bash
+$ py simulator.py
+```
 
 ## Known issues (from original repo)
 - On MacOS Big Sur and above, when rendering is turned on, you might encounter the error:
