@@ -50,11 +50,11 @@ class SimpleDriver:
         return speed, steering_angle
 ```
 
-A Driver is just a class that has a ```process_lidar``` function that takes in LiDAR data and returns a speed to drive at, and a steering angle.
+A Driver is just a class that has a ```process_lidar``` function which takes in LiDAR data and returns a speed to drive at along with a steering angle.
 
-```ranges```: an array of 1080 distances (ranges) detected by the LiDAR scanner. As the LiDAR scanner is 360&deg;, the angle between each range is 2&pi;/1080 (in radians).
+```ranges```: an array of 1080 distances (ranges) detected by the LiDAR scanner. As the LiDAR scanner takes readings for the full 360&deg;, the angle between each range is 2&pi;/1080 (in radians) with 0&deg; being straight ahead.
 
-```steering_angle```: an angle in the range [-&pi;, &pi;], i.e. full 360&deg; in radians.
+```steering_angle```: an angle in the range [-&pi;, &pi;], i.e. full 360&deg; in radians, with 0&deg; meaning straight ahead.
 
 ### Choosing a Driver
 
@@ -83,7 +83,7 @@ driver = SimpleDriver()
 ...
 ```
 
-Now if you run the simulator.py file again, it now uses our SimpleDriver
+Now if you run the simulator.py file again, it uses our SimpleDriver
 
 ```bash
 $ py simulator.py
