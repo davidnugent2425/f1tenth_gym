@@ -54,7 +54,7 @@ A Driver is just a class that has a ```process_lidar``` function which takes in 
 
 ```ranges```: an array of 1080 distances (ranges) detected by the LiDAR scanner. As the LiDAR scanner takes readings for the full 360&deg;, the angle between each range is 2&pi;/1080 (in radians).
 
-```steering_angle```: an angle in the range [-&pi;, &pi;], with 0&deg; meaning straight ahead.
+```steering_angle```: an angle in the range [-&pi/2;, &pi;/2], i.e. [-90&deg;, 90&deg;] in radians, with 0&deg; meaning straight ahead.
 
 ### Choosing a Driver
 

@@ -27,7 +27,7 @@ if __name__ == '__main__':
     
     while not done:
         speed, steer = driver.process_lidar(obs['scans'][0])
-        obs, step_reward, done, info = env.step(np.array([[steer/2, speed]]))
+        obs, step_reward, done, info = env.step(np.array([[steer, speed]]))
         laptime += step_reward
         env.render(mode='human')
     print('Sim elapsed time:', laptime, 'Real elapsed time:', time.time()-start)

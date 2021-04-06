@@ -8,7 +8,7 @@ class GapFollower:
     MAX_LIDAR_DIST = 3000000
     STRAIGHTS_SPEED = 8.0
     CORNERS_SPEED = 5.0
-    STRAIGHTS_STEERING_ANGLE = np.pi / 9  # 20 degrees
+    STRAIGHTS_STEERING_ANGLE = np.pi / 18  # 10 degrees
     
     def __init__(self):
         # used when calculating the angles of the LiDAR data
@@ -57,9 +57,11 @@ class GapFollower:
         return averaged_max_gap.argmax() + start_i
 
     def get_angle(self, range_index, range_len):
-        """ Get the angle of a particular element in the LiDAR data
+        """ Get the angle of a particular element in the LiDAR data and transform it into an appropriate steering angle
         """
-        return (range_index - (range_len/2)) * self.degrees_per_elem
+        lidar_angle = (range_index - (range_len/2)) * self.degrees_per_elem
+        steering_angle = lidar_angle / 2
+        return steering_angle
 
     def process_lidar(self, ranges):
         """ Process each LiDAR scan as per the Follow Gap algorithm & publish an AckermannDriveStamped Message
@@ -86,5 +88,5 @@ class GapFollower:
         if abs(steering_angle) > self.STRAIGHTS_STEERING_ANGLE:
             speed = self.CORNERS_SPEED
         else: speed = self.STRAIGHTS_SPEED
-        print('Steering angle in degrees: {}'.format((steering_angle/np.pi)*180))
+        print('Steering angle in degrees: {}'.format((steering_angle/(np.pi/2))*90))
         return speed, steering_angle
