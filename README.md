@@ -89,6 +89,8 @@ Now if you run the simulator.py file again, it uses our SimpleDriver
 $ py simulator.py
 ```
 
+To see some more complex processing, take a look at the GapFollower Driver in [follow_the_gap.py](./src/follow_the_gap.py) which implements the [Follow The Gap Method](https://www.youtube.com/watch?v=7VLYP-z9hTw&ab_channel=Real-TimemLABUPenn)! Notice that it still has a ```process_lidar``` function which takes in LiDAR data and returns a speed and steering angle. That's all we'll ever need.
+
 ## Known issues (from original repo)
 - On MacOS Big Sur and above, when rendering is turned on, you might encounter the error:
 ```
