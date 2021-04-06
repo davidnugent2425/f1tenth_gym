@@ -1,28 +1,41 @@
 # The F1TENTH Gym environment
 
-This is the repository of the F1TENTH Gym environment.
+This is a fork of the [F1TENTH Gym Repository](https://github.com/f1tenth/f1tenth_gym) designed to be as lightweight as possible.
 
-This project is still under heavy developement.
+## Prerequisites
 
-You can find the [documentation](https://f1tenth-gym.readthedocs.io/en/latest/) of the environment here.
+### Required
+
+* [Python](https://realpython.com/installing-python/)
+
+### Recommended
+
+* [Visual Studio Code](https://www.toolsqa.com/blogs/install-visual-studio-code/)
+* [git](https://www.atlassian.com/git/tutorials/install-git)
 
 ## Quickstart
-You can install the environment by running:
+
+Clone this repository. If you don't want to use git, you may alternatively [download](https://github.com/davidnugent2425/f1tenth_gym/archive/main.zip) this repository as a zip file (you will then have to extract and rename the folder).
 
 ```bash
-$ git clone https://github.com/f1tenth/f1tenth_gym.git
+$ git clone https://github.com/davidnugent2425/f1tenth_gym.git
+```
+
+Go into the repository and install the required packages. If you don't want to use the command line to navigate to the repository, you may open the folder in Visual Studio Code or another code editor of your choice. Note: [pip](https://pypi.org/project/pip/) is a package manager for Python packages.
+
+```
 $ cd f1tenth_gym
-$ git checkout exp_py
-$ pip3 install --user -e gym/
+$ pip install --user -e gym/
 ```
 
-Then you can run a quick waypoint follow example by:
+Then to make sure it's working, go into the src directory and run the simulator
+
 ```bash
-cd examples
-python3 waypoint_follow.py
+cd src
+py simulator.py
 ```
 
-## Known issues
+## Known issues (from original repo)
 - On MacOS Big Sur and above, when rendering is turned on, you might encounter the error:
 ```
 ImportError: Can't find framework /System/Library/Frameworks/OpenGL.framework.
