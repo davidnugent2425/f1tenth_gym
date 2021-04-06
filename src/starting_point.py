@@ -1,8 +1,4 @@
-
-class SampleDriver:    
-
-    def __init__(self):
-        self.sample_data = 0
+class SimpleDriver:    
 
     def process_lidar(self, ranges):
         speed = 5.0

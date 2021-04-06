@@ -4,13 +4,14 @@ import gym
 import numpy as np
 from argparse import Namespace
 
-from starting_point import SampleDriver
+# import your drivers here
 from follow_the_gap import GapFollower
+
+# choose your driver here
+driver = GapFollower()
 
 if __name__ == '__main__':
     
-    driver = GapFollower()
-
     with open('maps/config_example_map.yaml') as file:
         conf_dict = yaml.load(file, Loader=yaml.FullLoader)
     conf = Namespace(**conf_dict)

@@ -31,8 +31,8 @@ $ pip install --user -e gym/
 Then to make sure it's working, go into the src directory and run the simulator
 
 ```bash
-cd src
-py simulator.py
+$ cd src
+$ py simulator.py
 ```
 
 ## Known issues (from original repo)
