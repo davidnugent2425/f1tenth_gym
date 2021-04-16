@@ -1,3 +1,7 @@
+# This Fork has been moved [Here](https://github.com/FT-Autonomous/f1tenth-gym-quickstart)
+
+Go to that repository for most recent version^
+
 # The F1TENTH Gym environment
 
 This is a fork of the [F1TENTH Gym Repository](https://github.com/f1tenth/f1tenth_gym) designed to be as lightweight as possible.
